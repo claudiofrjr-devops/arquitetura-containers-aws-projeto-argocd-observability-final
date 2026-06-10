@@ -50,7 +50,19 @@ terraform init -backend-config=environment/prod/cluster-02/backend.tfvars --upgr
 terraform apply -var-file=environment/prod/cluster-02/terraform.tfvars --auto-approve
 
 
+echo "Control Plane - ArgoCD"
 cd ../control-plane
+
+rm -rf  .terraform
+
+terraform init -backend-config=environment/prod/backend.tfvars
+
+terraform apply -var-file=environment/prod/terraform.tfvars --auto-approve
+
+
+echo "Setup do Cluster de Observabilidade"
+
+cd ../observability-cluster
 
 rm -rf  .terraform
 

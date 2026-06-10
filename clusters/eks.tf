@@ -10,7 +10,7 @@ resource "aws_eks_cluster" "main" {
     endpoint_private_access = true
     endpoint_public_access  = true
     # Permite acesso publico ao cluster, se quiser pode colocar o IP da sua maquina ou CIDR
-    public_access_cidrs = concat(["179.83.12.98/32"],
+    public_access_cidrs = concat(["177.62.76.219/32"],
       [for nat in data.aws_nat_gateway.nats : "${nat.public_ip}/32"] # Os IPs do ArgoCD (NATs)
     )
   }

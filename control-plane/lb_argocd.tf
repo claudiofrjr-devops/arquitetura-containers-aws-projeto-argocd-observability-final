@@ -61,7 +61,7 @@ resource "aws_security_group" "main" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["179.83.12.98/32"]
+    cidr_blocks = ["177.62.76.219/32"]
   }
 
   egress {

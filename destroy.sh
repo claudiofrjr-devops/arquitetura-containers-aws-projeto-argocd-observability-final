@@ -45,6 +45,18 @@ terraform init -backend-config=environment/prod/backend.tfvars
 terraform destroy -var-file=environment/prod/terraform.tfvars --auto-approve
 
 
+
+echo "Destroy do Observability Cluster"
+
+cd ../observability-cluster
+
+rm -rf  .terraform
+
+terraform init -backend-config=environment/prod/backend.tfvars
+
+terraform destroy -var-file=environment/prod/terraform.tfvars --auto-approve
+
+
 cd ../../eks-arquitetura-microservices-modules/
 echo "Destroy do VPC"
 
