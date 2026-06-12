@@ -20,7 +20,7 @@ resource "aws_s3_bucket_acl" "chartmuseum" {
 
 resource "aws_s3_object" "linuxtips" {
   bucket = aws_s3_bucket.chartmuseum.id
-  key    = "linuxtips-0.1.0.tgz"
-  source = "${path.module}/helm/linuxtips-0.1.0.tgz"
-  etag   = filemd5("${path.module}/helm/linuxtips-0.1.0.tgz")
+  key    = "linuxtips-0.1.1.tgz"
+  source = "${path.module}/helm/linuxtips-0.1.1.tgz"
+  etag   = filemd5("${path.module}/helm/linuxtips-0.1.1.tgz")
 }

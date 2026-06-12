@@ -108,7 +108,7 @@ app:
       threshold: 80
     
   istio:
-    host: linuxtips.msfidelis.com.br
+    host: linuxtips.allcloudi.shop
     gateway:
       enabled: true
       protocol: HTTP

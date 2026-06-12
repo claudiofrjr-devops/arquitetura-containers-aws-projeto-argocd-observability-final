@@ -29,7 +29,7 @@ karpenter_capacity = [
     workload           = "general"
     ami_family         = "AL2023"
     ami_ssm            = "/aws/service/eks/optimized-ami/1.35/amazon-linux-2023/x86_64/standard/recommended/image_id"
-    instance_family    = ["t3", "c7i-flex"]
+    instance_family    = ["t3", "c7i-flex", "m7i-flex"]
     instance_sizes     = ["small", "large"]
     capacity_type      = ["on-demand", "spot"]
     availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
@@ -39,9 +39,9 @@ karpenter_capacity = [
     workload           = "grafana"
     ami_family         = "Bottlerocket"
     ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
-    instance_family    = ["t3", "c7i-flex"]
+    instance_family    = ["t3", "c7i-flex", "m7i-flex"]
     instance_sizes     = ["small", "large"]
-    capacity_type      = ["spot", "on-demand"]
+    capacity_type      = ["on-demand", "spot"]
     availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
   },
   {
@@ -49,9 +49,29 @@ karpenter_capacity = [
     workload           = "loki"
     ami_family         = "Bottlerocket"
     ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
-    instance_family    = ["t3", "c7i-flex"]
+    instance_family    = ["t3", "c7i-flex", "m7i-flex"]
     instance_sizes     = ["small", "large"]
-    capacity_type      = ["spot", "on-demand"]
+    capacity_type      = ["on-demand", "spot"]
     availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
   },
+  {
+    name               = "tempo"
+    workload           = "tempo"
+    ami_family         = "Bottlerocket"
+    ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
+    instance_family    = ["t3", "c7i-flex", "m7i-flex"]
+    instance_sizes     = ["small", "large"]
+    capacity_type      = ["on-demand", "spot"]
+    availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
+  },
+  {
+    name               = "mimir"
+    workload           = "mimir"
+    ami_family         = "Bottlerocket"
+    ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
+    instance_family    = ["t3", "c7i-flex", "m7i-flex"]
+    instance_sizes     = ["small", "large"]
+    capacity_type      = ["on-demand", "spot"]
+    availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
+  }
 ]

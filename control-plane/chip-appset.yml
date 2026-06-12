@@ -20,7 +20,7 @@ spec:
       source:
         repoURL: 'http://chartmuseum.chartmuseum.svc.cluster.local:8080'
         chart: linuxtips
-        targetRevision: 0.1.0
+        targetRevision: 0.1.1
         helm:
           releaseName: chip
           valuesObject:
